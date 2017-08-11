@@ -389,7 +389,7 @@ public class Main : MonoBehaviour {
             if ((currentTime < sunriseTime || currentTime > sunsetTime) && !lampOn)
             {
                 // Turn lamp on
-                print("turning lamp on");
+                if (printDebug) print("turning lamp on");
                 lampRenderer.material.SetColor("_EmissionColor", lampOnColor);
                 lampPointLight.enabled = true;
                 lampOn = true;
@@ -399,7 +399,7 @@ public class Main : MonoBehaviour {
             else if (currentTime > sunriseTime && currentTime < sunsetTime && lampOn)
             {
                 // Turn lamp off
-                print("turning lamp off");
+                if (printDebug) print("turning lamp off");
                 lampRenderer.material.SetColor("_EmissionColor", lampOffColor);
                 lampPointLight.enabled = false;
                 lampOn = false;
